@@ -1,0 +1,384 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button,
+button:focus {
+  outline: none;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+button:active {
+  outline: none;
+  background: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.quote {
+  border-radius: 0.8rem;
+  padding: 1.7em 2.4em;
+  max-width: 30.125rem;
+  display: grid;
+  align-items: center;
+  margin: 2rem;
+  border: 1px solid #556868;
+}
+.quote p {
+  margin: 0;
+}
+.quote::before {
+  content: "";
+  background-color: #001c1c;
+  opacity: 90%;
+}
+
+p.image-text {
+  margin-top: 0.75rem;
+  max-width: calc(83vw + 0.5rem);
+}
+
+.divider {
+  height: 1.0625rem;
+  width: 100%;
+  background-color: #556868;
+}
+
+body {
+  background-color: #011412;
+  font-family: "K2D", sans-serif;
+  position: relative;
+  mix-blend-mode: screen;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: #ffffff;
+  max-width: 91vw;
+}
+
+h1 {
+  font-size: 4.9375rem;
+  font-size: 5.5rem;
+  margin-bottom: 5rem;
+  font-weight: 500;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3.875rem;
+  margin-bottom: 5rem;
+}
+
+h3 {
+  font-size: 1.8125rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  max-width: calc(83vw + 0.5rem);
+}
+
+p.italic-quote {
+  font-style: italic;
+  font-size: 1.4375rem;
+  font-weight: 200;
+  width: 30.625rem;
+  max-width: calc(83vw + 0.5rem);
+}
+
+p.hp-quote-text {
+  font-size: 1.625rem;
+}
+
+.project section.life-and-career {
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+}
+.project section.life-and-career h1 {
+  padding: 6rem 6vw 0rem 6vw;
+}
+.project section.life-and-career::before {
+  content: "";
+  background-image: url(/images/h-p-lovecraft.jpg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-size: contain;
+  background-position: right bottom;
+  right: calc(-87.5rem + 48vw);
+  left: 0;
+  z-index: -4;
+  scale: 1;
+}
+.project .life-and-career__columns {
+  margin: 6rem 6vw 0rem 6vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding-bottom: 6rem;
+}
+.project .life-and-career__columns p {
+  width: max(29rem, 26vw);
+}
+
+section.works {
+  padding: 6rem 6vw 0rem 6vw;
+  padding-bottom: 5rem;
+  background-size: contain;
+  position: relative;
+  background-color: #011412;
+  background-color: rgba(85, 104, 104, 0.055);
+  background-image: url(images/tenticle.svg), url(images/bubbles1.svg), url(images/bubbles.svg);
+  background-repeat: no-repeat;
+  background-position: bottom, top left, bottom right;
+}
+section.works .works__columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
+  gap: 4rem;
+}
+
+section.cthulhu {
+  padding: 6rem 6vw 0rem 6vw;
+  margin: auto;
+  position: relative;
+  padding-bottom: 1rem;
+}
+section.cthulhu::before {
+  content: "";
+  position: absolute;
+  background-image: url(/images/Cthulhu.webp);
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.05;
+  background-size: cover;
+}
+section.cthulhu .cthulhu__columns {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 7rem;
+  justify-content: center;
+}
+section.cthulhu .cthulhu__columns .col-1 {
+  max-width: calc(83vw + 0.5rem);
+  vertical-align: super;
+  width: 44.4375rem;
+}
+section.cthulhu .cthulhu__columns .col-1 img {
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.cthulhu .cthulhu__columns p.italic-quote.italic-quote-2 {
+  margin-top: 4rem;
+}
+section.cthulhu .cthulhu__columns .col-2 {
+  max-width: calc(83vw + 0.5rem);
+  width: 44.4375rem;
+}
+section.cthulhu .cthulhu__columns .col-2 img {
+  width: 68% !important;
+  margin: auto;
+  margin-top: 4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.cthulhu .cthulhu__columns .col-2 p.italic-quote {
+  width: 44.4375rem;
+  max-width: calc(83vw + 0.5rem);
+  width: 30.625rem;
+  margin-top: 1rem;
+}
+
+section.quotes {
+  height: 81.625rem;
+  padding: 6rem 6vw 0rem 6vw;
+  position: relative;
+}
+section.quotes::before {
+  content: "";
+  background-image: url(/images/HP-LovecraftBG\ 2.png);
+  height: 81.625rem;
+  opacity: 3%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  background-size: auto !important;
+}
+section.quotes .quotes__holder {
+  margin-top: 9rem;
+  z-index: 10000;
+  margin-inline: auto;
+}
+section.quotes .quotes__wrapper {
+  margin: 5rem;
+}
+section.quotes .quote {
+  box-shadow: 0px 0px 0.5rem #556868;
+}
+section.quotes .quote-2 {
+  margin-left: 12rem;
+}
+section.quotes h2 {
+  padding-top: 4rem;
+}
+section.quotes img.back-up {
+  position: absolute;
+  opacity: 75%;
+  right: 1rem;
+  bottom: 1rem;
+}
+section.quotes img.back-up:hover {
+  opacity: 95%;
+  cursor: pointer;
+}
+section.quotes img.quotes__bottom-img {
+  max-width: 66.25rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 98.4rem) {
+  .cthulhu__columns {
+    margin: auto;
+    grid-template-columns: 1fr !important;
+  }
+  section.works .works__columns {
+    grid-template-columns: 1fr 1fr;
+  }
+  body .project section.cthulhu .cthulhu__columns .col-1 {
+    height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  body .project section.cthulhu .cthulhu__columns p:not(.image-text) {
+    margin: 0 0 2rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  body .project section.cthulhu .cthulhu__columns .image-text {
+    margin-bottom: 4rem;
+  }
+  p.italic-quote {
+    margin-bottom: 4rem;
+  }
+  section.cthulhu .col-2 {
+    width: 44.4375rem;
+  }
+  section.cthulhu .col-2 img {
+    width: 100% !important;
+  }
+  section.quotes {
+    margin-inline: 0;
+  }
+  section.quotes::before {
+    content: "";
+    background-size: contain !important;
+  }
+}
+@media only screen and (max-width: 86.2rem) {
+  .project section.works .works__columns {
+    justify-content: center;
+  }
+  .project section.works .works__columns {
+    width: 44.4375rem;
+  }
+  section.works .works__columns {
+    grid-template-columns: 1fr;
+  }
+  h2:not(section.quotes h2) {
+    text-align: left;
+    width: 44.4375rem;
+    margin-inline: auto;
+  }
+  col {
+    width: 44.4375rem !important;
+  }
+  p.italic-quote-2 {
+    margin-bottom: 0 !important;
+  }
+  img.quotes__bottom-img {
+    right: -18%;
+  }
+  section.quotes .quotes__wrapper {
+    margin-inline: auto !important;
+  }
+  .quote {
+    margin-inline: auto !important;
+  }
+  section.cthulhu .col-2 img {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 56.25rem) {
+  img.quotes__bottom-img {
+    right: -28%;
+    opacity: 60%;
+  }
+  .project section.life-and-career::before {
+    left: -27.375rem !important;
+  }
+  section.works .works__columns {
+    width: auto !important;
+  }
+}
+@media only screen and (max-width: 37.5rem) {
+  section.quotes img.quotes__bottom-img {
+    right: -68%;
+  }
+  h1 {
+    font-size: min(5.5rem, 10vw + 2rem);
+  }
+  h2 {
+    font-size: min(3.875rem, 7vw + 1rem);
+  }
+}/*# sourceMappingURL=style.css.map */
