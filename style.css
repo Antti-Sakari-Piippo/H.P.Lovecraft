@@ -239,11 +239,12 @@ section.quotes {
   height: 81.625rem;
   padding: 6rem 6vw 0rem 6vw;
   position: relative;
+  background: rgb(1, 20, 18);
+  background: linear-gradient(180deg, rgba(1, 20, 18, 0) 75.6%, rgba(3, 20, 18, 0.35) 83%), radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.02) 47%, rgba(3, 50, 46, 0.2) 100%);
 }
 section.quotes::before {
   content: "";
   background-image: url(/images/HP-LovecraftBG\ 2.png);
-  height: 81.625rem;
   opacity: 3%;
   display: block;
   position: absolute;
@@ -254,6 +255,7 @@ section.quotes::before {
   background-position-x: 50%;
   background-repeat: no-repeat;
   background-size: auto !important;
+  z-index: 99999;
 }
 section.quotes .quotes__holder {
   margin-top: 9rem;
