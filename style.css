@@ -89,7 +89,6 @@ h1 {
 }
 
 h2 {
-  text-align: center;
   font-size: 3.875rem;
   margin-bottom: 5rem;
 }
@@ -126,6 +125,13 @@ p.hp-quote-text {
 .project section.life-and-career h1 {
   padding: 6rem 6vw 0rem 6vw;
 }
+.project section.life-and-career > img {
+  max-width: 87%;
+  border: 1px solid #556868;
+  box-shadow: 0px 0px 0.5rem #556868;
+  margin: auto;
+  display: block;
+}
 .project section.life-and-career::before {
   content: "";
   background-image: url(/images/h-p-lovecraft.jpg);
@@ -142,13 +148,20 @@ p.hp-quote-text {
 }
 .project .life-and-career__columns {
   margin: 6rem 6vw 0rem 6vw;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   flex-wrap: wrap;
   gap: 4rem;
   padding-bottom: 6rem;
+  width: 60%;
+  max-width: 1400px;
+  max-width: calc(83vw + 0.5rem);
+}
+.project .life-and-career__columns col {
+  width: 44.4375rem;
 }
 .project .life-and-career__columns p {
-  width: max(29rem, 26vw);
+  max-width: 40rem;
 }
 
 section.works {
@@ -175,6 +188,9 @@ section.cthulhu {
   position: relative;
   padding-bottom: 1rem;
 }
+section.cthulhu h2 {
+  text-align: center;
+}
 section.cthulhu::before {
   content: "";
   position: absolute;
@@ -188,13 +204,11 @@ section.cthulhu::before {
   background-size: cover;
 }
 section.cthulhu .cthulhu__columns {
-  display: grid;
+  display: flex;
   margin: auto;
-  grid-template-columns: 1fr 1fr;
   width: -moz-fit-content;
   width: fit-content;
   gap: 4rem;
-  align-items: center;
   margin-bottom: 4rem;
   justify-content: center;
 }
@@ -219,11 +233,10 @@ section.cthulhu .cthulhu__columns p.italic-quote.italic-quote-2 {
   margin-top: 4rem;
 }
 section.cthulhu .cthulhu__columns .col-2 {
-  max-width: calc(83vw + 0.5rem);
-  width: 44.4375rem;
+  max-width: 44.4375rem;
 }
 section.cthulhu .cthulhu__columns .col-2 img {
-  width: 68%;
+  width: 100%;
   margin: auto;
   margin-top: 4rem;
   -o-object-fit: cover;
@@ -236,8 +249,10 @@ section.cthulhu .cthulhu__columns .col-2 p.italic-quote {
 }
 
 section.quotes {
-  height: 81.625rem;
+  min-height: 81.625rem;
+  height: 100%;
   padding: 6rem 6vw 0rem 6vw;
+  padding-bottom: 5rem;
   position: relative;
   background: rgb(1, 20, 18);
   background: linear-gradient(180deg, rgba(1, 20, 18, 0) 75.6%, rgba(3, 20, 18, 0.35) 83%), radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.02) 47%, rgba(3, 50, 46, 0.2) 100%);
@@ -254,7 +269,6 @@ section.quotes::before {
   right: 0;
   background-position-x: 50%;
   background-repeat: no-repeat;
-  background-size: auto !important;
   z-index: 99999;
 }
 section.quotes .quotes__holder {
@@ -273,12 +287,14 @@ section.quotes .quote-2 {
 }
 section.quotes h2 {
   padding-top: 4rem;
+  text-align: center;
 }
 section.quotes img.back-up {
   position: absolute;
   opacity: 75%;
   right: 1rem;
   bottom: 1rem;
+  z-index: 99999;
 }
 section.quotes img.back-up:hover {
   opacity: 95%;
@@ -292,31 +308,30 @@ section.quotes img.quotes__bottom-img {
   z-index: -1;
 }
 
-@media only screen and (max-width: 98.4rem) {
-  .cthulhu__columns {
-    margin: auto;
+@media only screen and (min-width: 70em) and (max-width: 90em) {
+  .project section.works .works__columns {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media only screen and (max-width: 70em) {
+  .project section.works .works__columns {
     grid-template-columns: 1fr !important;
   }
-  section.works .works__columns {
-    grid-template-columns: 1fr 1fr;
+  body .project section .life-and-career__columns {
+    grid-template-columns: 1fr !important;
   }
-  body .project section.cthulhu .cthulhu__columns .col-1 {
-    height: unset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+@media only screen and (max-width: 98.4em) {
+  body .project section.cthulhu .cthulhu__columns {
     flex-wrap: wrap;
   }
   body .project section.cthulhu .cthulhu__columns p:not(.image-text) {
-    margin: 0 0 2rem 0;
     margin-inline: auto;
+    margin-bottom: 2rem;
     width: 100%;
   }
   p.italic-quote {
     margin-bottom: 4rem;
-  }
-  section.cthulhu .col-2 {
-    width: 44.4375rem;
   }
   section.cthulhu .col-2 img {
     width: 100% !important;
@@ -326,35 +341,40 @@ section.quotes img.quotes__bottom-img {
   }
   section.quotes::before {
     content: "";
-    background-size: contain !important;
+    background-size: cover !important;
   }
 }
-@media only screen and (max-width: 86.2rem) {
-  .project section.works .works__columns {
-    justify-content: center;
+@media only screen and (max-width: 86.2em) {
+  .project section.life-and-career::before {
+    display: none;
   }
-  .project section.works .works__columns {
-    width: 44.4375rem;
+  .project section.life-and-career img {
+    display: block !important;
+    width: 100%;
   }
-  section.works .works__columns {
-    grid-template-columns: 1fr;
+  .life-and-career__columns {
+    width: 100% !important;
   }
-  h2:not(section.quotes h2) {
-    text-align: left;
+  .life-and-career__columns p {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .cthulhu__columns {
+    margin: auto;
+    width: 100% !important;
+  }
+  section.cthulhu h2 {
     width: 44.4375rem;
     margin-inline: auto;
   }
   col {
     width: 44.4375rem !important;
   }
-  .col-2 img {
-    width: 100%;
-  }
   p.italic-quote-2 {
     margin-bottom: 0 !important;
   }
   img.quotes__bottom-img {
-    right: -18%;
+    display: none;
   }
   section.quotes .quotes__wrapper {
     margin-inline: auto !important;
@@ -366,22 +386,15 @@ section.quotes img.quotes__bottom-img {
     width: 100% !important;
   }
 }
-@media only screen and (max-width: 56.25rem) {
-  img.quotes__bottom-img {
-    right: -28%;
-    opacity: 60%;
+@media only screen and (min-width: 56.25em) {
+  .project section.life-and-career > img {
+    display: none;
   }
-  .project section.life-and-career::before {
-    left: -27.375rem !important;
-  }
-  section.works .works__columns {
-    width: auto !important;
+  .life-and-career__columns {
+    grid-template-columns: 1fr 1fr !important;
   }
 }
-@media only screen and (max-width: 37.5rem) {
-  section.quotes img.quotes__bottom-img {
-    right: -68%;
-  }
+@media only screen and (max-width: 37.5em) {
   h1 {
     font-size: min(5.5rem, 10vw + 2rem);
   }

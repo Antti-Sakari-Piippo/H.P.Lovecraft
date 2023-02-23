@@ -11,6 +11,7 @@ $m-300: 1rem;
 $m-400: 1.25rem;
 $m-500: 1.5rem;
 $m-600: 2rem;
+$m-small-gap: 2rem;
 $m-700: 3rem;
 $m-800: 4rem;
 $m-900: 5rem;
@@ -28,6 +29,7 @@ $font-color: #ffffff;
 $bubbles-color: #1c1c1c;
 $quote-color: #001c1c;
 $borders-color: #556868;
+$box-shadow: 0px 0px 0.5rem $borders-color;
 
 button,
 button:focus {
@@ -55,7 +57,7 @@ ul {
     max-width: 30.125rem;
     display: grid;
     align-items: center;
-    margin: $m-600;
+    margin: $m-small-gap;
     border: 1px solid $borders-color;
     p {
         margin: 0;
@@ -113,7 +115,6 @@ h1 {
 }
 
 h2 {
-    text-align: center;
     font-size: 3.875rem;
     margin-bottom: $m-900;
 }
@@ -150,6 +151,13 @@ p.hp-quote-text {
         h1 {
             padding: $project-padding;
         }
+        > img {
+            max-width: 87%;
+            border: 1px solid $borders-color;
+            box-shadow: $box-shadow;
+            margin: auto;
+            display: block;
+        }
         &::before {
             content: '';
             background-image: url(/images/h-p-lovecraft.jpg);
@@ -167,12 +175,19 @@ p.hp-quote-text {
     }
     .life-and-career__columns {
         margin: $project-padding;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         flex-wrap: wrap;
         gap: $m-800;
         padding-bottom: 6rem;
+        width: 60%;
+        max-width: 1400px;
+        max-width: $max-content-width;
+        col {
+            width: $col-width;
+        }
         p {
-            width: max(29rem, 26vw);
+            max-width: 40rem;
         }
     }
 }
@@ -182,7 +197,7 @@ section.works {
     padding-bottom: $m-900;
     background-size: contain;
     position: relative;
-    background-color: #011412;
+    background-color: $overlay-color;
     background-color: rgba($color: $bg-color, $alpha: 0.055);
     background-image: url(images/tenticle.svg), url(images/bubbles1.svg), url(images/bubbles.svg);
     background-repeat: no-repeat;
@@ -200,6 +215,9 @@ section.cthulhu {
     margin: auto;
     position: relative;
     padding-bottom: 1rem;
+    h2 {
+        text-align: center;
+    }
     &::before {
         content: '';
         position: absolute;
@@ -214,17 +232,15 @@ section.cthulhu {
     }
 
     .cthulhu__columns {
-        display: grid;
+        display: flex;
         margin: auto;
-        grid-template-columns: 1fr 1fr;
         width: fit-content;
         gap: $m-800;
-        align-items: center;
         margin-bottom: $m-800;
         justify-content: center;
         .col-item {
             display: grid;
-            gap: 2rem;
+            gap: $m-600;
         }
         .col-1 {
             max-width: $max-content-width;
@@ -242,10 +258,9 @@ section.cthulhu {
             margin-top: $m-800;
         }
         .col-2 {
-            max-width: $max-content-width;
-            width: $col-width;
+            max-width: $col-width;
             img {
-                width: 68%;
+                width: 100%;
                 margin: auto;
                 margin-top: $m-800;
                 object-fit: cover;
@@ -260,8 +275,10 @@ section.cthulhu {
 }
 
 section.quotes {
-    height: 81.625rem;
+    min-height: 81.625rem;
+    height: 100%;
     padding: $project-padding;
+    padding-bottom: 5rem;
     position: relative;
     background: rgb(1, 20, 18);
     background: linear-gradient(180deg, rgb(1, 20, 18, 0) 75.6%, rgba(3, 20, 18, 0.35) 83%),
@@ -279,7 +296,6 @@ section.quotes {
         right: 0;
         background-position-x: 50%;
         background-repeat: no-repeat;
-        background-size: auto !important;
         z-index: 99999;
     }
     .quotes__holder {
@@ -291,19 +307,21 @@ section.quotes {
         margin: $m-900;
     }
     .quote {
-        box-shadow: 0px 0px 0.5rem #556868;
+        box-shadow: $box-shadow;
     }
     .quote-2 {
         margin-left: 12rem;
     }
     h2 {
         padding-top: $m-800;
+        text-align: center;
     }
     img.back-up {
         position: absolute;
         opacity: 75%;
         right: 1rem;
         bottom: 1rem;
+        z-index: 99999;
         &:hover {
             opacity: 95%;
             cursor: pointer;
@@ -318,25 +336,29 @@ section.quotes {
     }
 }
 
-@media only screen and (max-width: 98.4rem) {
-    .cthulhu__columns {
-        margin: auto;
+//cols
+@media only screen and (min-width: 70em) and (max-width: 90em) {
+    .project section.works .works__columns {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+@media only screen and (max-width: 70em) {
+    .project section.works .works__columns {
         grid-template-columns: 1fr !important;
     }
-    section.works .works__columns {
-        grid-template-columns: 1fr 1fr;
+
+    body .project section .life-and-career__columns {
+        grid-template-columns: 1fr !important;
     }
+}
+//
+
+@media only screen and (max-width: 98.4em) {
     body .project section.cthulhu .cthulhu__columns {
-        .col-1 {
-            height: unset;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+        flex-wrap: wrap;
         p:not(.image-text) {
-            margin: 0 0 $m-600 0;
             margin-inline: auto;
+            margin-bottom: $m-600;
             width: 100%;
         }
     }
@@ -344,7 +366,6 @@ section.quotes {
         margin-bottom: $m-800;
     }
     section.cthulhu .col-2 {
-        width: $col-width;
         img {
             width: 100% !important;
         }
@@ -354,38 +375,41 @@ section.quotes {
     }
     section.quotes::before {
         content: '';
-        background-size: contain !important;
+        background-size: cover !important;
     }
 }
 
-@media only screen and (max-width: 86.2rem) {
-    .project section.works .works__columns {
-        justify-content: center;
+@media only screen and (max-width: 86.2em) {
+    .project section.life-and-career::before {
+        display: none;
     }
-
-    .project section.works .works__columns {
-        width: $col-width;
+    .project section.life-and-career img {
+        display: block !important;
+        width: 100%;
     }
-
-    section.works .works__columns {
-        grid-template-columns: 1fr;
+    .life-and-career__columns {
+        width: 100% !important;
+        p {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
     }
-    h2:not(section.quotes h2) {
-        text-align: left;
+    .cthulhu__columns {
+        margin: auto;
+        width: 100% !important;
+    }
+    section.cthulhu h2 {
         width: $col-width;
         margin-inline: auto;
     }
     col {
         width: $col-width !important;
     }
-    .col-2 img {
-        width: 100%;
-    }
     p.italic-quote-2 {
         margin-bottom: 0 !important;
     }
     img.quotes__bottom-img {
-        right: -18%;
+        display: none;
     }
     section.quotes .quotes__wrapper {
         margin-inline: auto !important;
@@ -398,23 +422,16 @@ section.quotes {
     }
 }
 
-@media only screen and (max-width: 56.25rem) {
-    img.quotes__bottom-img {
-        right: -28%;
-        opacity: 60%;
+@media only screen and (min-width: 56.25em) {
+    .project section.life-and-career > img {
+        display: none;
     }
-    .project section.life-and-career::before {
-        left: -27.375rem !important;
-    }
-    section.works .works__columns {
-        width: auto !important;
+    .life-and-career__columns {
+        grid-template-columns: 1fr 1fr !important;
     }
 }
 
-@media only screen and (max-width: 37.5rem) {
-    section.quotes img.quotes__bottom-img {
-        right: -68%;
-    }
+@media only screen and (max-width: 37.5em) {
     h1 {
         font-size: min(5.5rem, calc(10vw + 2rem));
     }
