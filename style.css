@@ -195,8 +195,12 @@ section.cthulhu .cthulhu__columns {
   width: fit-content;
   gap: 4rem;
   align-items: center;
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
   justify-content: center;
+}
+section.cthulhu .cthulhu__columns .col-item {
+  display: grid;
+  gap: 2rem;
 }
 section.cthulhu .cthulhu__columns .col-1 {
   max-width: calc(83vw + 0.5rem);
@@ -208,6 +212,9 @@ section.cthulhu .cthulhu__columns .col-1 img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+section.cthulhu .cthulhu__columns .col-1 .image-text {
+  margin-bottom: 4rem;
+}
 section.cthulhu .cthulhu__columns p.italic-quote.italic-quote-2 {
   margin-top: 4rem;
 }
@@ -216,7 +223,7 @@ section.cthulhu .cthulhu__columns .col-2 {
   width: 44.4375rem;
 }
 section.cthulhu .cthulhu__columns .col-2 img {
-  width: 68% !important;
+  width: 68%;
   margin: auto;
   margin-top: 4rem;
   -o-object-fit: cover;
@@ -226,7 +233,6 @@ section.cthulhu .cthulhu__columns .col-2 p.italic-quote {
   width: 44.4375rem;
   max-width: calc(83vw + 0.5rem);
   width: 30.625rem;
-  margin-top: 1rem;
 }
 
 section.quotes {
@@ -301,12 +307,8 @@ section.quotes img.quotes__bottom-img {
   }
   body .project section.cthulhu .cthulhu__columns p:not(.image-text) {
     margin: 0 0 2rem 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
     width: 100%;
-  }
-  body .project section.cthulhu .cthulhu__columns .image-text {
-    margin-bottom: 4rem;
   }
   p.italic-quote {
     margin-bottom: 4rem;
@@ -342,6 +344,9 @@ section.quotes img.quotes__bottom-img {
   }
   col {
     width: 44.4375rem !important;
+  }
+  .col-2 img {
+    width: 100%;
   }
   p.italic-quote-2 {
     margin-bottom: 0 !important;

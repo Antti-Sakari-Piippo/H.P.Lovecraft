@@ -220,8 +220,12 @@ section.cthulhu {
         width: fit-content;
         gap: $m-800;
         align-items: center;
-        margin-bottom: 7rem;
+        margin-bottom: $m-800;
         justify-content: center;
+        .col-item {
+            display: grid;
+            gap: 2rem;
+        }
         .col-1 {
             max-width: $max-content-width;
             vertical-align: super;
@@ -230,24 +234,26 @@ section.cthulhu {
                 margin: auto;
                 object-fit: cover;
             }
+            .image-text {
+                margin-bottom: $m-800;
+            }
         }
         p.italic-quote.italic-quote-2 {
-            margin-top: 4rem;
+            margin-top: $m-800;
         }
         .col-2 {
             max-width: $max-content-width;
             width: $col-width;
             img {
-                width: 68% !important;
+                width: 68%;
                 margin: auto;
-                margin-top: 4rem;
+                margin-top: $m-800;
                 object-fit: cover;
             }
             p.italic-quote {
                 width: $col-width;
                 max-width: $max-content-width;
                 width: 30.625rem;
-                margin-top: 1rem;
             }
         }
     }
@@ -326,12 +332,8 @@ section.quotes {
         }
         p:not(.image-text) {
             margin: 0 0 $m-600 0;
-            margin-left: auto;
-            margin-right: auto;
+            margin-inline: auto;
             width: 100%;
-        }
-        .image-text {
-            margin-bottom: $m-800;
         }
     }
     p.italic-quote {
@@ -371,6 +373,9 @@ section.quotes {
     }
     col {
         width: $col-width !important;
+    }
+    .col-2 img {
+        width: 100%;
     }
     p.italic-quote-2 {
         margin-bottom: 0 !important;
