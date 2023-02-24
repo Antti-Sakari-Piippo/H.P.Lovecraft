@@ -134,7 +134,7 @@ p.hp-quote-text {
 }
 .project section.life-and-career::before {
   content: "";
-  background-image: url(/images/h-p-lovecraft.jpg);
+  background-image: url(/images/h-p-lovecraft.webp);
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
@@ -162,6 +162,12 @@ p.hp-quote-text {
 }
 .project .life-and-career__columns p {
   max-width: 40rem;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 section.works {
@@ -259,7 +265,7 @@ section.quotes {
 }
 section.quotes::before {
   content: "";
-  background-image: url(/images/HP-LovecraftBG\ 2.png);
+  background-image: url(/images/HP-LovecraftBG\ 2.webp);
   opacity: 3%;
   display: block;
   position: absolute;
