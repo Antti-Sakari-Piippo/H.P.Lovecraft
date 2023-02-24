@@ -266,7 +266,7 @@ section.quotes {
 section.quotes::before {
   content: "";
   background-image: url(/images/HP-LovecraftBG\ 2.webp);
-  opacity: 3%;
+  opacity: 4%;
   display: block;
   position: absolute;
   top: 0;
