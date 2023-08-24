@@ -17,10 +17,17 @@
     <title>H.P. Lovecraft</title>
   </head>
   <body>
-    <div class="project">
+    <div
+      class="project"
+      aria-label="In this website we explore the life of H.P. Lovecraft"
+    >
       <section class="life-and-career">
         <h1>H.P. Lovecraft</h1>
-        <img src="/images/h-p-lovecraft.webp" alt="H.P. Lovecraft front view" />
+        <img
+          src="/images/h-p-lovecraft.webp"
+          alt="H.P. Lovecraft"
+          aria-label="H.P. Lovecraft front view"
+        />
         <div class="life-and-career__columns">
           <div class="col">
             <h3>Early Life</h3>
@@ -87,7 +94,7 @@
           </div>
         </div>
       </section>
-      <div class="divider"></div>
+      <div class="divider" aria-hidden="true"></div>
       <section class="works">
         <h2>The Most Iconic Works of H.P.Lovecraft</h2>
         <div class="works__columns">
@@ -256,12 +263,15 @@
           </div>
         </div>
       </section>
-      <div class="divider"></div>
+      <div class="divider" aria-hidden="true"></div>
       <section class="cthulhu">
         <h2>Cthulhu</h2>
         <div class="cthulhu__columns">
           <div class="col col-1">
-            <img src="/images/Cthulhu.webp" alt="cthulhu" />
+            <img
+              src="/images/Cthulhu.webp"
+              alt="cthulhu rising from the ocean"
+            />
             <p class="image-text">
               Cthulhu, a Great Old One, is a god-like monstrosity who lies in a
               death-like slumber beneath the Pacific Ocean in his sunken city of
@@ -295,8 +305,12 @@
             <div class="img-text__holder">
               <img
                 src="/images/lovecraftsCthulhu.webp"
-                alt="Cthulhu by Lovecraft"
+                alt="Cthulhu by H.P.Lovecraft"
               />
+              <p class="visually-hidden">
+                Description of the image above: Cthulhu as depicted by creator
+                H.P Lovecraft
+              </p>
               <p class="image-text">
                 Cthulhu as depicted by creator H.P. Lovecraft
               </p>
@@ -304,7 +318,7 @@
           </div>
         </div>
       </section>
-      <div class="divider"></div>
+      <div class="divider" aria-hidden="true"></div>
       <section class="quotes">
         <h2>Quotes by H.P Lovecraft</h2>
         <div class="quotes__holder">
@@ -340,14 +354,14 @@
           src="/images/backUp.svg"
           role="button"
           alt="back to page start button"
-          aria-label="back to page start button"
+          aria-label="back to page start"
           tabindex="0"
         />
         <img
           class="quotes__bottom-img"
           src="/images/hp.lovecraftSideBGremoved.webp"
           alt="H.P Lovecraft from side"
-          aria-label="H.P Lovecraft from side"
+          aria-label="Profile view photograph of H.P. Lovecraft, depicting him from the side, showing his magnificent chin"
         />
       </section>
     </div>

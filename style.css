@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -9,6 +11,22 @@ button:focus {
   outline: none;
   background: transparent;
   border: 1px solid transparent;
+}
+
+body {
+  background-color: #011412;
+  font-family: "K2D", sans-serif;
+  position: relative;
+  mix-blend-mode: screen;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 button:active {
@@ -42,6 +60,17 @@ ul {
   opacity: 90%;
 }
 
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 p.image-text {
   margin-top: 0.75rem;
   max-width: calc(83vw + 0.5rem);
@@ -51,22 +80,6 @@ p.image-text {
   height: 1.0625rem;
   width: 100%;
   background-color: #556868;
-}
-
-body {
-  background-color: #011412;
-  font-family: "K2D", sans-serif;
-  position: relative;
-  mix-blend-mode: screen;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 a {
@@ -162,12 +175,6 @@ p.hp-quote-text {
 }
 .project .life-and-career__columns p {
   max-width: 40rem;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
 }
 
 section.works {
