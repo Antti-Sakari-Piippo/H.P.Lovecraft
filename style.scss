@@ -212,7 +212,10 @@ section.works {
     background-color: rgba($color: $bg-color, $alpha: 0.055);
     background-image: url(images/tenticle.svg), url(images/bubbles1.svg), url(images/bubbles.svg);
     background-repeat: no-repeat;
-    background-position: bottom, top left, bottom right;
+    background-position:
+        bottom,
+        top left,
+        bottom right;
 
     .works__columns {
         display: grid;
