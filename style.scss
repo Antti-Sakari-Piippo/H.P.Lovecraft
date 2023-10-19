@@ -115,7 +115,9 @@ h2,
 h3,
 p {
     color: $font-color;
+    color: rgba($color: $font-color, $alpha: 0.92);
     max-width: 91vw;
+    z-index: 999999;
 }
 
 h1 {
@@ -152,6 +154,7 @@ p.italic-quote {
 
 p.hp-quote-text {
     font-size: 1.625rem;
+    z-index: 99999;
 }
 
 .project {
@@ -418,6 +421,7 @@ section.quotes {
     }
     col {
         width: $col-width !important;
+        z-index: 999999 !important;
     }
     p.italic-quote-2 {
         margin-bottom: 0 !important;

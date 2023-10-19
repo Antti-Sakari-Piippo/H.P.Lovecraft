@@ -91,7 +91,9 @@ h2,
 h3,
 p {
   color: #ffffff;
+  color: rgba(255, 255, 255, 0.92);
   max-width: 91vw;
+  z-index: 999999;
 }
 
 h1 {
@@ -128,6 +130,7 @@ p.italic-quote {
 
 p.hp-quote-text {
   font-size: 1.625rem;
+  z-index: 99999;
 }
 
 .project section.life-and-career {
@@ -382,6 +385,7 @@ section.quotes img.quotes__bottom-img {
   }
   col {
     width: 44.4375rem !important;
+    z-index: 999999 !important;
   }
   p.italic-quote-2 {
     margin-bottom: 0 !important;
