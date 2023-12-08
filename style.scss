@@ -29,6 +29,13 @@ $quote-color: #001c1c;
 $borders-color: #556868;
 $box-shadow: 0px 0px 0.5rem $borders-color;
 
+// media breakpoints
+$xl: 98.4em;
+$large: 90em;
+$medium: 88em;
+$small: 70em;
+$xl-small: 37.5em;
+
 button,
 button:focus {
     outline: none;
@@ -353,23 +360,23 @@ section.quotes {
 }
 
 //cols
-@media only screen and (min-width: 70em) and (max-width: 90em) {
+@media only screen and (min-width: $small) and (max-width: $large) {
     body .project section.works .works__columns {
         grid-template-columns: 1fr 1fr;
     }
 }
-@media only screen and (max-width: 70em) {
+@media only screen and (max-width: $small) {
     body .project section.works .works__columns {
         grid-template-columns: 1fr;
     }
 
-    body .project section .life-and-career__columns {
+    body .project .life-and-career__columns {
         grid-template-columns: 1fr;
     }
 }
 //
 
-@media only screen and (max-width: 98.4em) {
+@media only screen and (max-width: $xl) {
     body .project section.cthulhu .cthulhu__columns {
         flex-wrap: wrap;
         p:not(.image-text) {
@@ -396,14 +403,14 @@ section.quotes {
     }
 }
 
-@media only screen and (max-width: 88em) {
+@media only screen and (max-width: $medium) {
     body .project {
         section.life-and-career::before {
             display: none;
         }
-        .section.life-and-career > img {
-            display: block !important;
-            width: 100% !important;
+        section.life-and-career > img {
+            display: block;
+            width: 100%;
         }
         .life-and-career__columns {
             width: 100%;
@@ -441,7 +448,7 @@ section.quotes {
     }
 }
 
-@media only screen and (min-width: 88em) {
+@media only screen and (min-width: $medium) {
     .project section.life-and-career > img {
         display: none;
     }
@@ -450,7 +457,7 @@ section.quotes {
     }
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: $xl-small) {
     body .project {
         h1 {
             font-size: min(5.5rem, calc(10vw + 2rem));

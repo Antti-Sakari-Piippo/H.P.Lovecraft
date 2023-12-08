@@ -334,7 +334,7 @@ section.quotes img.quotes__bottom-img {
   body .project section.works .works__columns {
     grid-template-columns: 1fr;
   }
-  body .project section .life-and-career__columns {
+  body .project .life-and-career__columns {
     grid-template-columns: 1fr;
   }
 }
@@ -366,9 +366,9 @@ section.quotes img.quotes__bottom-img {
   body .project section.life-and-career::before {
     display: none;
   }
-  body .project .section.life-and-career > img {
-    display: block !important;
-    width: 100% !important;
+  body .project section.life-and-career > img {
+    display: block;
+    width: 100%;
   }
   body .project .life-and-career__columns {
     width: 100%;
