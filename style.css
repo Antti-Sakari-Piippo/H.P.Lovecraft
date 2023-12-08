@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+@layer override;
 button,
 button:focus {
   outline: none;
@@ -187,7 +188,7 @@ section.works {
   background-size: contain;
   position: relative;
   background-color: hsl(177, 90%, 3%);
-  background-color: rgba(85, 104, 104, 0.055);
+  background-color: rgba(1, 15, 14, 0.055);
   background-image: url(images/tenticle.svg), url(images/bubbles1.svg), url(images/bubbles.svg);
   background-repeat: no-repeat;
   background-position: bottom, top left, bottom right;
@@ -325,98 +326,100 @@ section.quotes img.quotes__bottom-img {
   z-index: -1;
 }
 
-@media only screen and (min-width: 70em) and (max-width: 90em) {
-  .project section.works .works__columns {
-    grid-template-columns: 1fr 1fr !important;
+@layer override {
+  @media only screen and (min-width: 70em) and (max-width: 90em) {
+    .project section.works .works__columns {
+      grid-template-columns: 1fr 1fr !important;
+    }
   }
-}
-@media only screen and (max-width: 70em) {
-  .project section.works .works__columns {
-    grid-template-columns: 1fr !important;
+  @media only screen and (max-width: 70em) {
+    .project section.works .works__columns {
+      grid-template-columns: 1fr !important;
+    }
+    body .project section .life-and-career__columns {
+      grid-template-columns: 1fr !important;
+    }
   }
-  body .project section .life-and-career__columns {
-    grid-template-columns: 1fr !important;
+  @media only screen and (max-width: 98.4em) {
+    body .project section.cthulhu .cthulhu__columns {
+      flex-wrap: wrap;
+    }
+    body .project section.cthulhu .cthulhu__columns p:not(.image-text) {
+      margin-inline: auto;
+      margin-bottom: 2rem;
+      width: 100% !important;
+    }
+    p.italic-quote {
+      margin-bottom: 4rem;
+      width: 100%;
+    }
+    section.cthulhu .col-2 img {
+      width: 100% !important;
+    }
+    section.quotes {
+      margin-inline: 0;
+    }
+    section.quotes::before {
+      content: "";
+      background-size: cover !important;
+    }
   }
-}
-@media only screen and (max-width: 98.4em) {
-  body .project section.cthulhu .cthulhu__columns {
-    flex-wrap: wrap;
+  @media only screen and (max-width: 86.2em) {
+    .project section.life-and-career::before {
+      display: none !important;
+    }
+    .project section.life-and-career img {
+      display: block !important;
+      width: 100% !important;
+    }
+    .life-and-career__columns {
+      width: 100% !important;
+    }
+    .life-and-career__columns p {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .cthulhu__columns {
+      margin: auto !important;
+      width: 100% !important;
+    }
+    section.cthulhu h2 {
+      margin-inline: auto;
+    }
+    col {
+      width: 44.4375rem !important;
+      z-index: 999999 !important;
+    }
+    p.italic-quote-2 {
+      margin-bottom: 0 !important;
+    }
+    img.quotes__bottom-img {
+      display: none;
+    }
+    section.quotes .quotes__wrapper {
+      margin-inline: auto !important;
+    }
+    .quote {
+      margin-inline: auto !important;
+    }
+    section.cthulhu .col-2 img {
+      width: 100% !important;
+    }
   }
-  body .project section.cthulhu .cthulhu__columns p:not(.image-text) {
-    margin-inline: auto;
-    margin-bottom: 2rem;
-    width: 100%;
+  @media only screen and (min-width: 56.25em) {
+    .project section.life-and-career > img {
+      display: none !important;
+    }
+    .life-and-career__columns {
+      grid-template-columns: 1fr 1fr !important;
+    }
   }
-  p.italic-quote {
-    margin-bottom: 4rem;
-  }
-  section.cthulhu .col-2 img {
-    width: 100% !important;
-  }
-  section.quotes {
-    margin-inline: 0;
-  }
-  section.quotes::before {
-    content: "";
-    background-size: cover !important;
-  }
-}
-@media only screen and (max-width: 86.2em) {
-  .project section.life-and-career::before {
-    display: none;
-  }
-  .project section.life-and-career img {
-    display: block !important;
-    width: 100%;
-  }
-  .life-and-career__columns {
-    width: 100% !important;
-  }
-  .life-and-career__columns p {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  .cthulhu__columns {
-    margin: auto;
-    width: 100% !important;
-  }
-  section.cthulhu h2 {
-    width: 44.4375rem;
-    margin-inline: auto;
-  }
-  col {
-    width: 44.4375rem !important;
-    z-index: 999999 !important;
-  }
-  p.italic-quote-2 {
-    margin-bottom: 0 !important;
-  }
-  img.quotes__bottom-img {
-    display: none;
-  }
-  section.quotes .quotes__wrapper {
-    margin-inline: auto !important;
-  }
-  .quote {
-    margin-inline: auto !important;
-  }
-  section.cthulhu .col-2 img {
-    width: 100% !important;
-  }
-}
-@media only screen and (min-width: 56.25em) {
-  .project section.life-and-career > img {
-    display: none;
-  }
-  .life-and-career__columns {
-    grid-template-columns: 1fr 1fr !important;
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  h1 {
-    font-size: min(5.5rem, 10vw + 2rem);
-  }
-  h2 {
-    font-size: min(3.875rem, 7vw + 1rem);
+  @media only screen and (max-width: 37.5em) {
+    h1 {
+      font-size: min(5.5rem, 10vw + 2rem);
+    }
+    h2 {
+      font-size: min(3.875rem, 7vw + 1rem);
+    }
   }
 }/*# sourceMappingURL=style.css.map */
