@@ -57,14 +57,14 @@ ul {
   display: grid;
   align-items: center;
   margin: 2rem;
-  border: 1px solid #556868;
+  border: 1px solid hsl(180, 10%, 37%);
 }
 .quote p {
   margin: 0;
 }
 .quote::before {
   content: "";
-  background-color: #001c1c;
+  background-color: hsl(180, 100%, 5%);
   opacity: 90%;
 }
 
@@ -88,7 +88,7 @@ p.image-text {
 .separator {
   height: 0.4rem;
   width: 100%;
-  background-color: #556868;
+  background-color: hsl(180, 10%, 37%);
 }
 
 a {
@@ -152,8 +152,8 @@ p.hp-quote-text {
 }
 .project section.life-and-career > img {
   max-width: 87%;
-  border: 1px solid #556868;
-  box-shadow: 0px 0px 0.5rem #556868;
+  border: 1px solid hsl(180, 10%, 37%);
+  box-shadow: 0px 0px 0.5rem hsl(180, 10%, 37%);
   margin: auto;
   display: block;
 }
@@ -307,7 +307,7 @@ section.quotes .quotes__wrapper {
   margin: 5rem;
 }
 section.quotes .quote {
-  box-shadow: 0px 0px 0.5rem #556868;
+  box-shadow: 0px 0px 0.5rem hsl(180, 10%, 37%);
 }
 section.quotes .quote-2 {
   margin-left: 12rem;

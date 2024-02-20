@@ -9,9 +9,9 @@
 // colors
 $overlay-color: hsl(177, 90%, 3%);
 $font-color: hsl(0, 0%, 90%);
-$quote-color: #001c1c;
-$borders-color: #556868;
-$box-shadow: 0px 0px 0.5rem $borders-color;
+$quote-color: hsl(180, 100%, 5%);
+$border-color: hsl(180, 10%, 37%);
+$box-shadow: 0px 0px 0.5rem $border-color;
 
 // spacings
 $m-100: 0.5rem;
@@ -53,7 +53,6 @@ body::before {
 }
 
 // resets and defaults
-
 button,
 button:focus {
     outline: none;
@@ -90,7 +89,7 @@ ul {
     display: grid;
     align-items: center;
     margin: $m-600;
-    border: 1px solid $borders-color;
+    border: 1px solid $border-color;
     p {
         margin: 0;
     }
@@ -121,7 +120,7 @@ p.image-text {
 .separator {
     height: 0.4rem;
     width: 100%;
-    background-color: $borders-color;
+    background-color: $border-color;
 }
 
 // texts
@@ -187,7 +186,7 @@ p.hp-quote-text {
         }
         > img {
             max-width: 87%;
-            border: 1px solid $borders-color;
+            border: 1px solid $border-color;
             box-shadow: $box-shadow;
             margin: auto;
             display: block;
