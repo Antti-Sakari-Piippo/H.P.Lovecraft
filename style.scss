@@ -6,8 +6,14 @@
     box-sizing: border-box;
 }
 
-// margins
-$m-small-gap: 2rem;
+// colors
+$overlay-color: hsl(177, 90%, 3%);
+$font-color: hsl(0, 0%, 90%);
+$quote-color: #001c1c;
+$borders-color: #556868;
+$box-shadow: 0px 0px 0.5rem $borders-color;
+
+// spacings
 $m-100: 0.5rem;
 $m-200: 0.75rem;
 $m-300: 1rem;
@@ -17,17 +23,12 @@ $m-600: 2rem;
 $m-700: 3rem;
 $m-800: 4rem;
 $m-900: 5rem;
+
+// widths
 $project-inline: 6vw;
 $project-padding: 6rem $project-inline 0rem $project-inline;
 $max-content-width: calc(95vw - 2 * $project-inline + 0.5rem);
 $col-width: 44.4375rem;
-
-// colors
-$overlay-color: hsl(177, 90%, 3%);
-$font-color: hsl(0, 0%, 90%);
-$quote-color: #001c1c;
-$borders-color: #556868;
-$box-shadow: 0px 0px 0.5rem $borders-color;
 
 // media breakpoints
 $xl: 98.4em;
@@ -35,13 +36,6 @@ $large: 90em;
 $medium: 88em;
 $small: 70em;
 $xl-small: 37.5em;
-
-button,
-button:focus {
-    outline: none;
-    background: transparent;
-    border: 1px solid transparent;
-}
 
 body {
     background-color: $overlay-color;
@@ -58,26 +52,44 @@ body::before {
     right: 0;
 }
 
+// resets and defaults
+
+button,
+button:focus {
+    outline: none;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
 button:active {
     outline: none;
     background: transparent;
 }
 
+p,
+h3,
+h4,
+h2 {
+    isolation: isolate;
+}
+
 img {
     max-width: 100%;
+    display: block;
 }
 
 ul {
     list-style-type: none;
 }
 
+// utilities & uniques
 .quote {
     border-radius: 0.8rem;
     padding: 1.7em 2.4em;
     max-width: 30.125rem;
     display: grid;
     align-items: center;
-    margin: $m-small-gap;
+    margin: $m-600;
     border: 1px solid $borders-color;
     p {
         margin: 0;
@@ -106,12 +118,13 @@ p.image-text {
     max-width: $max-content-width;
 }
 
-.divider {
+.separator {
     height: 0.4rem;
     width: 100%;
     background-color: $borders-color;
 }
 
+// texts
 a {
     text-decoration: none;
 }
@@ -121,7 +134,7 @@ h2,
 h3,
 p {
     color: $font-color;
-    color: rgba($color: $font-color, $alpha: 0.92);
+    color: rgba($color: $font-color, $alpha: 0.94);
     max-width: 91vw;
     z-index: 999999;
 }
@@ -163,6 +176,7 @@ p.hp-quote-text {
     z-index: 99999;
 }
 
+// Main content start
 .project {
     section.life-and-career {
         width: 100%;
@@ -212,6 +226,7 @@ p.hp-quote-text {
     }
 }
 
+// Works section
 section.works {
     padding: $project-padding;
     padding-bottom: $m-900;
@@ -234,6 +249,7 @@ section.works {
     }
 }
 
+// Cthulhu section
 section.cthulhu {
     padding: $project-padding;
     margin: auto;
@@ -252,9 +268,9 @@ section.cthulhu {
         left: 0;
         right: 0;
         opacity: 0.05;
+        pointer-events: none;
         background-size: cover;
     }
-
     .cthulhu__columns {
         display: flex;
         margin: auto;
@@ -298,6 +314,7 @@ section.cthulhu {
     }
 }
 
+// Quotes section
 section.quotes {
     min-height: 81.625rem;
     height: 100%;
@@ -320,6 +337,7 @@ section.quotes {
         background-position-x: 50%;
         background-repeat: no-repeat;
         z-index: 99999;
+        pointer-events: none;
     }
     .quotes__holder {
         margin-top: 9rem;
@@ -359,6 +377,8 @@ section.quotes {
     }
 }
 
+// Media queries
+
 //cols
 @media only screen and (min-width: $small) and (max-width: $large) {
     body .project section.works .works__columns {
@@ -374,7 +394,6 @@ section.quotes {
         grid-template-columns: 1fr;
     }
 }
-//
 
 @media only screen and (max-width: $xl) {
     body .project section.cthulhu .cthulhu__columns {

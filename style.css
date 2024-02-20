@@ -6,13 +6,6 @@
   box-sizing: border-box;
 }
 
-button,
-button:focus {
-  outline: none;
-  background: transparent;
-  border: 1px solid transparent;
-}
-
 body {
   background-color: hsl(177, 90%, 3%);
   font-family: "K2D", sans-serif;
@@ -29,13 +22,28 @@ body::before {
   right: 0;
 }
 
+button,
+button:focus {
+  outline: none;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
 button:active {
   outline: none;
   background: transparent;
 }
 
+p,
+h3,
+h4,
+h2 {
+  isolation: isolate;
+}
+
 img {
   max-width: 100%;
+  display: block;
 }
 
 ul {
@@ -77,7 +85,7 @@ p.image-text {
   max-width: calc(83vw + 0.5rem);
 }
 
-.divider {
+.separator {
   height: 0.4rem;
   width: 100%;
   background-color: #556868;
@@ -92,7 +100,7 @@ h2,
 h3,
 p {
   color: hsl(0, 0%, 90%);
-  color: rgba(230, 230, 230, 0.92);
+  color: rgba(230, 230, 230, 0.94);
   max-width: 91vw;
   z-index: 999999;
 }
@@ -218,6 +226,7 @@ section.cthulhu::before {
   left: 0;
   right: 0;
   opacity: 0.05;
+  pointer-events: none;
   background-size: cover;
 }
 section.cthulhu .cthulhu__columns {
@@ -287,6 +296,7 @@ section.quotes::before {
   background-position-x: 50%;
   background-repeat: no-repeat;
   z-index: 99999;
+  pointer-events: none;
 }
 section.quotes .quotes__holder {
   margin-top: 9rem;
