@@ -100,19 +100,13 @@ ul {
     }
 }
 
-.visually-hidden {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 0;
-    border: 0;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    white-space: nowrap;
+figure {
+    position: relative;
 }
 
-p.image-text {
+figcaption {
     font-size: 1.1rem;
+    line-height: 1.37;
     margin-top: $m-100;
     max-width: $max-content-width;
 }
@@ -131,7 +125,8 @@ a {
 h1,
 h2,
 h3,
-p {
+p,
+figure {
     color: $font-color;
     color: rgba($color: $font-color, $alpha: 0.94);
     max-width: 91vw;
@@ -166,7 +161,7 @@ p.italic-quote {
     font-style: italic;
     font-size: 1.4375rem;
     font-weight: 200;
-    width: 30.625rem;
+    // width: 30.625rem;
     max-width: $max-content-width;
 }
 
@@ -275,13 +270,8 @@ section.cthulhu {
         margin: auto;
         width: fit-content;
         gap: $m-800;
-        margin-bottom: $m-800;
         justify-content: center;
-        .col-item {
-            display: grid;
-            gap: $m-600;
-        }
-        .col-1 {
+        .cthulhu__columns_col-1 {
             max-width: $max-content-width;
             vertical-align: super;
             width: $col-width;
@@ -289,14 +279,12 @@ section.cthulhu {
                 margin: auto;
                 object-fit: cover;
             }
-            .image-text {
-                margin-bottom: $m-800;
-            }
         }
         p.italic-quote.italic-quote-2 {
             margin-top: $m-800;
         }
-        .col-2 {
+        .cthulhu__columns_col-2 {
+            margin-bottom: $m-800;
             max-width: $col-width;
             img {
                 width: 100%;
@@ -305,9 +293,9 @@ section.cthulhu {
                 object-fit: cover;
             }
             p.italic-quote {
+                $col-width: 36.4rem;
                 width: $col-width;
                 max-width: $max-content-width;
-                width: 30.625rem;
             }
         }
     }
@@ -397,19 +385,20 @@ section.quotes {
 @media only screen and (max-width: $xl) {
     body .project section.cthulhu .cthulhu__columns {
         flex-wrap: wrap;
-        p:not(.image-text) {
-            margin-inline: auto;
-            margin-bottom: $m-600;
-            width: 100%;
+        p {
+            margin-bottom: 0;
         }
     }
     p.italic-quote {
         margin-bottom: $m-800;
         width: 100%;
     }
-    section.cthulhu .col-2 {
+    section.cthulhu .cthulhu__columns_col-2 {
         img {
             width: 100%;
+        }
+        p.italic-quote {
+            width: unset !important;
         }
     }
     section.quotes {
@@ -448,9 +437,9 @@ section.quotes {
             width: $col-width;
             z-index: 999999;
         }
-        p.italic-quote-2 {
-            margin-bottom: 0;
-        }
+        // p.italic-quote-2 {
+        //     margin-bottom: 0;
+        // }
         img.quotes__bottom-img {
             display: none;
         }
@@ -460,7 +449,7 @@ section.quotes {
         .quote {
             margin-inline: auto;
         }
-        section.cthulhu .col-2 img {
+        section.cthulhu .cthulhu__columns_col-2 img {
             width: 100%;
         }
     }
