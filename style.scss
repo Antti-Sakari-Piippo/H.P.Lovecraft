@@ -23,12 +23,15 @@ $m-600: 2rem;
 $m-700: 3rem;
 $m-800: 4rem;
 $m-900: 5rem;
+$m-1000: 9rem;
+$m-1200: 12rem;
 
 // widths
 $project-inline: 6vw;
 $project-padding: 6rem $project-inline 0rem $project-inline;
 $max-content-width: calc(95vw - 2 * $project-inline + 0.5rem);
 $col-width: 44.4375rem;
+$font-max-width: 91vw;
 
 // media breakpoints
 $xl: 98.4em;
@@ -36,6 +39,10 @@ $large: 90em;
 $medium: 88em;
 $small: 70em;
 $xl-small: 37.5em;
+
+// fonts for small screen size
+$h1-responsive: min(5.5rem, calc(10vw + 2rem));
+$h2-responsive: min(3.875rem, calc(7vw + 1rem));
 
 body {
     background-color: $overlay-color;
@@ -129,7 +136,7 @@ p,
 figure {
     color: $font-color;
     color: rgba($color: $font-color, $alpha: 0.94);
-    max-width: 91vw;
+    max-width: $font-max-width;
     z-index: 999999;
 }
 
@@ -327,7 +334,7 @@ section.quotes {
         pointer-events: none;
     }
     .quotes__holder {
-        margin-top: 9rem;
+        margin-top: $m-1000;
         z-index: 10000;
         margin-inline: auto;
     }
@@ -338,7 +345,7 @@ section.quotes {
         box-shadow: $box-shadow;
     }
     .quote-2 {
-        margin-left: 12rem;
+        margin-left: $m-1200;
     }
     h2 {
         padding-top: $m-800;
@@ -467,10 +474,10 @@ section.quotes {
 @media only screen and (max-width: $xl-small) {
     body .project {
         h1 {
-            font-size: min(5.5rem, calc(10vw + 2rem));
+            font-size: $h1-responsive;
         }
         h2 {
-            font-size: min(3.875rem, calc(7vw + 1rem));
+            font-size: $h2-responsive;
         }
     }
 }
