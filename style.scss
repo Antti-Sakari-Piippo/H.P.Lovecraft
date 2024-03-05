@@ -168,7 +168,6 @@ p.italic-quote {
     font-style: italic;
     font-size: 1.4375rem;
     font-weight: 200;
-    // width: 30.625rem;
     max-width: $max-content-width;
 }
 
@@ -444,9 +443,6 @@ section.quotes {
             width: $col-width;
             z-index: 999999;
         }
-        // p.italic-quote-2 {
-        //     margin-bottom: 0;
-        // }
         img.quotes__bottom-img {
             display: none;
         }
