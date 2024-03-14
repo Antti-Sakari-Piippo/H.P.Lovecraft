@@ -28,7 +28,7 @@ $m-1200: 12rem;
 
 // widths
 $project-inline: 6vw;
-$project-padding: 6rem $project-inline 0rem $project-inline;
+$project-spacing: 6rem $project-inline 0rem $project-inline;
 $max-content-width: calc(95vw - 2 * $project-inline + 0.5rem);
 $col-width: 44.4375rem;
 $font-max-width: 91vw;
@@ -183,7 +183,7 @@ p.hp-quote-text {
         position: relative;
         min-height: 100vh;
         h1 {
-            padding: $project-padding;
+            margin: $project-spacing;
         }
         > img {
             max-width: 87%;
@@ -208,7 +208,7 @@ p.hp-quote-text {
         }
     }
     .life-and-career__columns {
-        margin: $project-padding;
+        margin: $project-spacing;
         display: grid;
         grid-template-columns: 1fr 1fr;
         flex-wrap: wrap;
@@ -228,7 +228,7 @@ p.hp-quote-text {
 
 // Works section
 section.works {
-    padding: $project-padding;
+    padding: $project-spacing;
     padding-bottom: $m-900;
     background-size: contain;
     position: relative;
@@ -251,7 +251,7 @@ section.works {
 
 // Cthulhu section
 section.cthulhu {
-    padding: $project-padding;
+    padding: $project-spacing;
     margin: auto;
     position: relative;
     padding-bottom: 1rem;
@@ -311,7 +311,7 @@ section.cthulhu {
 section.quotes {
     min-height: 81.625rem;
     height: 100%;
-    padding: $project-padding;
+    padding: $project-spacing;
     padding-bottom: 5rem;
     position: relative;
     background: rgb(1, 20, 18);

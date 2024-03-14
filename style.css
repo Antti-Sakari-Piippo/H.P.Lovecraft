@@ -142,7 +142,7 @@ p.hp-quote-text {
   min-height: 100vh;
 }
 .project section.life-and-career h1 {
-  padding: 6rem 6vw 0rem 6vw;
+  margin: 6rem 6vw 0rem 6vw;
 }
 .project section.life-and-career > img {
   max-width: 87%;
