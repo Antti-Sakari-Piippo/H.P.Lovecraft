@@ -119,7 +119,7 @@ figcaption {
 }
 
 .separator {
-    height: 0.4rem;
+    block-size: 0.4rem;
     width: 100%;
     background-color: $border-color;
 }
@@ -143,23 +143,23 @@ figure {
 h1 {
     font-size: 4.9375rem;
     font-size: 5.5rem;
-    margin-bottom: $m-900;
+    margin-block-end: $m-900;
     font-weight: 500;
 }
 
 h2 {
     font-size: 3.875rem;
-    margin-bottom: $m-900;
+    margin-block-end: $m-900;
 }
 
 h3 {
     font-size: 1.8125rem;
-    margin-bottom: $m-300;
+    margin-block-end: $m-300;
 }
 
 p {
     font-size: 1.25rem;
-    margin-bottom: $m-400;
+    margin-block-end: $m-400;
     line-height: 1.4;
     max-width: $max-content-width;
 }
@@ -179,7 +179,7 @@ p.hp-quote-text {
 // Main content start
 .project {
     section.life-and-career {
-        width: 100%;
+        inline-size: 100%;
         position: relative;
         min-height: 100vh;
         h1 {
@@ -213,12 +213,12 @@ p.hp-quote-text {
         grid-template-columns: 1fr 1fr;
         flex-wrap: wrap;
         gap: $m-800;
-        padding-bottom: 6rem;
-        width: 56%;
-        max-width: 1400px;
+        padding-block-end: 6rem;
+        inline-size: 56%;
+        max-width: 87.5rem;
         max-width: $max-content-width;
         col {
-            width: $col-width;
+            inline-size: $col-width;
         }
         p {
             max-width: 40rem;
@@ -229,7 +229,7 @@ p.hp-quote-text {
 // Works section
 section.works {
     padding: $project-spacing;
-    padding-bottom: $m-900;
+    padding-block-end: $m-900;
     background-size: contain;
     position: relative;
     background-color: $overlay-color;
@@ -254,7 +254,7 @@ section.cthulhu {
     padding: $project-spacing;
     margin: auto;
     position: relative;
-    padding-bottom: 1rem;
+    padding-block-end: 1rem;
     h2 {
         text-align: center;
     }
@@ -274,13 +274,13 @@ section.cthulhu {
     .cthulhu__columns {
         display: flex;
         margin: auto;
-        width: fit-content;
+        inline-size: fit-content;
         gap: $m-800;
         justify-content: center;
         .cthulhu__columns_col-1 {
             max-width: $max-content-width;
             vertical-align: super;
-            width: $col-width;
+            inline-size: $col-width;
             img {
                 margin: auto;
                 object-fit: cover;
@@ -290,17 +290,17 @@ section.cthulhu {
             margin-top: $m-800;
         }
         .cthulhu__columns_col-2 {
-            margin-bottom: $m-800;
+            margin-block-end: $m-800;
             max-width: $col-width;
             img {
-                width: 100%;
+                inline-size: 100%;
                 margin: auto;
                 margin-top: $m-800;
                 object-fit: cover;
             }
             p.italic-quote {
                 $col-width: 36.4rem;
-                width: $col-width;
+                inline-size: $col-width;
                 max-width: $max-content-width;
             }
         }
@@ -310,9 +310,9 @@ section.cthulhu {
 // Quotes section
 section.quotes {
     min-height: 81.625rem;
-    height: 100%;
+    block-size: 100%;
     padding: $project-spacing;
-    padding-bottom: 5rem;
+    padding-block-end: 5rem;
     position: relative;
     background: rgb(1, 20, 18);
     background: linear-gradient(180deg, rgb(1, 20, 18, 0) 75.6%, rgba(3, 20, 18, 0.35) 83%),
@@ -344,10 +344,10 @@ section.quotes {
         box-shadow: $box-shadow;
     }
     .quote-2 {
-        margin-left: $m-1200;
+        margin-inline-start: $m-1200;
     }
     h2 {
-        padding-top: $m-800;
+        margin-block-start: $m-800;
         text-align: center;
     }
     img.back-up {
@@ -392,19 +392,19 @@ section.quotes {
     body .project section.cthulhu .cthulhu__columns {
         flex-wrap: wrap;
         p {
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
     }
     p.italic-quote {
-        margin-bottom: $m-800;
-        width: 100%;
+        margin-block-end: $m-800;
+        inline-size: 100%;
     }
     section.cthulhu .cthulhu__columns_col-2 {
         img {
-            width: 100%;
+            inline-size: 100%;
         }
         p.italic-quote {
-            width: unset !important;
+            inline-size: unset !important;
         }
     }
     section.quotes {
@@ -423,24 +423,24 @@ section.quotes {
         }
         section.life-and-career > img {
             display: block;
-            width: 100%;
+            inline-size: 100%;
         }
         .life-and-career__columns {
-            width: 100%;
+            inline-size: 100%;
             p {
-                width: 100%;
+                inline-size: 100%;
                 max-width: 100%;
             }
         }
         .cthulhu__columns {
             margin: auto;
-            width: 100%;
+            inline-size: 100%;
         }
         section.cthulhu h2 {
             margin-inline: auto;
         }
         col {
-            width: $col-width;
+            inline-size: $col-width;
             z-index: 999999;
         }
         img.quotes__bottom-img {
@@ -453,7 +453,7 @@ section.quotes {
             margin-inline: auto;
         }
         section.cthulhu .cthulhu__columns_col-2 img {
-            width: 100%;
+            inline-size: 100%;
         }
     }
 }
