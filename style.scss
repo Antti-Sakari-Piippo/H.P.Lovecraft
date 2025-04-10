@@ -73,9 +73,10 @@ button:active {
 }
 
 p,
-h3,
 h4,
-h2 {
+h3,
+h2,
+h1 {
     z-index: 9999;
 }
 
@@ -103,7 +104,7 @@ ul {
     &::before {
         content: '';
         background-color: $quote-color;
-        opacity: 90%;
+        opacity: 0.9;
     }
 }
 
@@ -234,7 +235,7 @@ section.works {
     position: relative;
     background-color: $overlay-color;
     background-color: rgba($color: $overlay-color, $alpha: 0.055);
-    background-image: url(images/tenticle.svg), url(images/bubbles1.svg), url(images/bubbles.svg);
+    background-image: url(images/tentacle.svg), url(images/bubbles1.svg), url(images/bubbles.svg);
     background-repeat: no-repeat;
     background-position:
         bottom,
@@ -254,7 +255,7 @@ section.cthulhu {
     padding: $project-spacing;
     margin: auto;
     position: relative;
-    padding-block-end: 1rem;
+    padding-block-end: $m-300;
     h2 {
         text-align: center;
     }
@@ -319,14 +320,11 @@ section.quotes {
         radial-gradient(circle, rgb(0 0 0 / 20%) 0%, rgb(0 0 0 / 2%) 47%, rgb(3 50 46 / 20%) 100%);
     &::before {
         content: '';
-        background-image: url(/images/HP-LovecraftBG\ 2.webp);
-        opacity: 4%;
+        background-image: url(/images/HP-LovecraftBG.webp);
+        opacity: 0.05;
         display: block;
         position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        inset: 0;
         background-position-x: 50%;
         background-repeat: no-repeat;
         z-index: 99999;
@@ -352,17 +350,17 @@ section.quotes {
     }
     img.back-up {
         position: absolute;
-        opacity: 75%;
-        right: 1rem;
-        bottom: 1rem;
+        opacity: 0.75;
+        right: $m-300;
+        bottom: $m-300;
         z-index: 99999;
         &:hover {
-            opacity: 95%;
+            opacity: 0.95;
             cursor: pointer;
         }
     }
     img.quotes__bottom-img {
-        max-width: 66.25rem;
+        width: 61rem;
         position: absolute;
         right: 0;
         bottom: 0;
