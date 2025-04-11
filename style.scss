@@ -12,7 +12,7 @@ $font-color: hsl(0, 0%, 90%);
 $quote-color: hsl(180, 100%, 5%);
 $border-color: hsl(180, 10%, 37%);
 $box-shadow: 0px 0px 0.5rem $border-color;
-
+$Cthulhu-col-width: 44.4rem;
 // spacings
 $m-100: 0.5rem;
 $m-200: 0.75rem;
@@ -30,7 +30,6 @@ $m-1200: 12rem;
 $project-inline: 6vw;
 $project-spacing: 6rem $project-inline 0rem $project-inline;
 $max-content-width: calc(95vw - 2 * $project-inline + 0.5rem);
-$col-width: 44.4375rem;
 $font-max-width: 91vw;
 
 // media breakpoints
@@ -43,6 +42,8 @@ $xl-small: 37.5em;
 // fonts for small screen size
 $h1-responsive: min(5.5rem, calc(10vw + 2rem));
 $h2-responsive: min(3.875rem, calc(7vw + 1rem));
+
+$column-width: 32rem;
 
 body {
     background-color: $overlay-color;
@@ -82,7 +83,9 @@ h1 {
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
+    object-fit: cover;
 }
 
 ul {
@@ -138,11 +141,10 @@ figure {
     color: $font-color;
     color: rgba($color: $font-color, $alpha: 0.94);
     max-width: $font-max-width;
-    z-index: 999999;
+    z-index: 999;
 }
 
 h1 {
-    font-size: 4.9375rem;
     font-size: 5.5rem;
     margin-block-end: $m-900;
     font-weight: 500;
@@ -174,7 +176,7 @@ p.italic-quote {
 
 p.hp-quote-text {
     font-size: 1.625rem;
-    z-index: 99999;
+    z-index: 999;
 }
 
 // Main content start
@@ -185,6 +187,7 @@ p.hp-quote-text {
         min-height: 100vh;
         h1 {
             margin: $project-spacing;
+            margin-block-end: $m-500;
         }
         > img {
             max-width: 87%;
@@ -211,16 +214,13 @@ p.hp-quote-text {
     .life-and-career__columns {
         margin: $project-spacing;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(min($column-width, 100%), 1fr));
+        max-width: calc($column-width * 3 + $m-800 * 2); // max 3 cols + 2 gaps
         flex-wrap: wrap;
         gap: $m-800;
         padding-block-end: 6rem;
         inline-size: 56%;
-        max-width: 87.5rem;
         max-width: $max-content-width;
-        col {
-            inline-size: $col-width;
-        }
         p {
             max-width: 40rem;
         }
@@ -244,7 +244,7 @@ section.works {
 
     .works__columns {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(min($column-width, 100%), 1fr));
         margin: auto;
         gap: $m-800;
     }
@@ -279,9 +279,8 @@ section.cthulhu {
         gap: $m-800;
         justify-content: center;
         .cthulhu__columns_col-1 {
-            max-width: $max-content-width;
             vertical-align: super;
-            inline-size: $col-width;
+            inline-size: $Cthulhu-col-width;
             img {
                 margin: auto;
                 object-fit: cover;
@@ -292,7 +291,7 @@ section.cthulhu {
         }
         .cthulhu__columns_col-2 {
             margin-block-end: $m-800;
-            max-width: $col-width;
+            max-width: $Cthulhu-col-width;
             img {
                 inline-size: 100%;
                 margin: auto;
@@ -302,7 +301,6 @@ section.cthulhu {
             p.italic-quote {
                 $col-width: 36.4rem;
                 inline-size: $col-width;
-                max-width: $max-content-width;
             }
         }
     }
@@ -327,7 +325,7 @@ section.quotes {
         inset: 0;
         background-position-x: 50%;
         background-repeat: no-repeat;
-        z-index: 99999;
+        z-index: 999;
         pointer-events: none;
     }
     .quotes__holder {
@@ -353,7 +351,7 @@ section.quotes {
         opacity: 0.75;
         right: $m-300;
         bottom: $m-300;
-        z-index: 99999;
+        z-index: 999;
         &:hover {
             opacity: 0.95;
             cursor: pointer;
@@ -369,23 +367,6 @@ section.quotes {
 }
 
 // Media queries
-
-//cols
-@media only screen and (min-width: $small) and (max-width: $large) {
-    body .project section.works .works__columns {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media only screen and (max-width: $small) {
-    body .project section.works .works__columns {
-        grid-template-columns: 1fr;
-    }
-
-    body .project .life-and-career__columns {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media only screen and (max-width: $xl) {
     body .project section.cthulhu .cthulhu__columns {
         flex-wrap: wrap;
@@ -438,8 +419,8 @@ section.quotes {
             margin-inline: auto;
         }
         col {
-            inline-size: $col-width;
-            z-index: 999999;
+            inline-size: $Cthulhu-col-width;
+            z-index: 999;
         }
         img.quotes__bottom-img {
             display: none;
@@ -459,9 +440,6 @@ section.quotes {
 @media only screen and (min-width: $medium) {
     .project section.life-and-career > img {
         display: none;
-    }
-    .life-and-career__columns {
-        grid-template-columns: 1fr 1fr;
     }
 }
 
