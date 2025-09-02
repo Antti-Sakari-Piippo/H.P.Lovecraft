@@ -79,7 +79,7 @@ figure {
 figcaption {
   font-size: 1.1rem;
   line-height: 1.4;
-  margin-top: 0.5rem;
+  margin-block-start: 0.5rem;
   max-width: calc(83vw + 0.5rem);
 }
 
@@ -99,7 +99,7 @@ h3,
 p,
 figure {
   color: hsl(0, 0%, 90%);
-  color: rgba(230, 230, 230, 0.94);
+  color: rgba(229.5, 229.5, 229.5, 0.94);
   max-width: 91vw;
   z-index: 999;
 }
@@ -190,7 +190,7 @@ section.works {
   background-size: contain;
   position: relative;
   background-color: hsl(177, 90%, 3%);
-  background-color: rgba(1, 15, 14, 0.055);
+  background-color: rgba(0.765, 14.535, 13.8465, 0.055);
   background-image: url(images/tentacle.svg), url(images/bubbles1.svg), url(images/bubbles.svg);
   background-repeat: no-repeat;
   background-position: bottom, top left, bottom right;
@@ -242,7 +242,7 @@ section.cthulhu .cthulhu__columns .cthulhu__columns_col-1 img {
      object-fit: cover;
 }
 section.cthulhu .cthulhu__columns p.italic-quote.italic-quote-2 {
-  margin-top: 4rem;
+  margin-block-start: 4rem;
 }
 section.cthulhu .cthulhu__columns .cthulhu__columns_col-2 {
   margin-block-end: 4rem;
@@ -251,7 +251,7 @@ section.cthulhu .cthulhu__columns .cthulhu__columns_col-2 {
 section.cthulhu .cthulhu__columns .cthulhu__columns_col-2 img {
   inline-size: 100%;
   margin: auto;
-  margin-top: 4rem;
+  margin-block-start: 4rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -281,7 +281,7 @@ section.quotes::before {
   pointer-events: none;
 }
 section.quotes .quotes__holder {
-  margin-top: 9rem;
+  margin-block-start: 9rem;
   z-index: 10000;
   margin-inline: auto;
 }
