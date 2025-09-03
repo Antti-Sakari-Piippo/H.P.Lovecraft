@@ -43,8 +43,8 @@ h1 {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  max-inline-size: 100%;
+  block-size: auto;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
@@ -57,7 +57,7 @@ ul {
 .quote {
   border-radius: 0.8rem;
   padding: 1.7em 2.4em;
-  max-width: 30.125rem;
+  max-inline-size: 30.125rem;
   display: grid;
   align-items: center;
   margin: 2rem;
@@ -78,14 +78,14 @@ figure {
 
 figcaption {
   font-size: 1.1rem;
-  line-height: 1.4;
+  line-block-size: 1.4;
   margin-block-start: 0.5rem;
-  max-width: calc(83vw + 0.5rem);
+  max-inline-size: calc(83vw + 0.5rem);
 }
 
 .separator {
   block-size: 0.4rem;
-  width: 100%;
+  inline-size: 100%;
   background-color: hsl(180, 10%, 37%);
 }
 
@@ -100,7 +100,6 @@ p,
 figure {
   color: hsl(0, 0%, 90%);
   color: rgba(229.5, 229.5, 229.5, 0.94);
-  max-width: 91vw;
   z-index: 999;
 }
 
@@ -123,15 +122,15 @@ h3 {
 p {
   font-size: 1.25rem;
   margin-block-end: 1.25rem;
-  line-height: 1.4;
-  max-width: calc(83vw + 0.5rem);
+  line-block-size: 1.4;
+  max-inline-size: calc(83vw + 0.5rem);
 }
 
 p.italic-quote {
   font-style: italic;
   font-size: 1.4375rem;
   font-weight: 200;
-  max-width: calc(83vw + 0.5rem);
+  max-inline-size: calc(83vw + 0.5rem);
 }
 
 p.hp-quote-text {
@@ -142,14 +141,14 @@ p.hp-quote-text {
 .project section.life-and-career {
   inline-size: 100%;
   position: relative;
-  min-height: 100vh;
+  min-block-size: 100vh;
 }
 .project section.life-and-career h1 {
   margin: 6rem 6vw 0rem 6vw;
   margin-block-end: 1.5rem;
 }
 .project section.life-and-career > img {
-  max-width: 87%;
+  max-inline-size: 87%;
   border: 1px solid hsl(180, 10%, 37%);
   box-shadow: 0px 0px 0.5rem hsl(180, 10%, 37%);
   margin: auto;
@@ -173,15 +172,15 @@ p.hp-quote-text {
   margin: 6rem 6vw 0rem 6vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(32rem, 100%), 1fr));
-  max-width: 104rem;
+  max-inline-size: 104rem;
   flex-wrap: wrap;
   gap: 4rem;
   padding-block-end: 6rem;
   inline-size: 56%;
-  max-width: calc(83vw + 0.5rem);
+  max-inline-size: calc(83vw + 0.5rem);
 }
 .project .life-and-career__columns p {
-  max-width: 40rem;
+  max-inline-size: 40rem;
 }
 
 section.works {
@@ -246,7 +245,7 @@ section.cthulhu .cthulhu__columns p.italic-quote.italic-quote-2 {
 }
 section.cthulhu .cthulhu__columns .cthulhu__columns_col-2 {
   margin-block-end: 4rem;
-  max-width: 44.4rem;
+  max-inline-size: 44.4rem;
 }
 section.cthulhu .cthulhu__columns .cthulhu__columns_col-2 img {
   inline-size: 100%;
@@ -258,9 +257,12 @@ section.cthulhu .cthulhu__columns .cthulhu__columns_col-2 img {
 section.cthulhu .cthulhu__columns .cthulhu__columns_col-2 p.italic-quote {
   inline-size: 36.4rem;
 }
+section.cthulhu .cthulhu__columns .cthulhu__columns_col-2 figure {
+  inline-size: 75%;
+}
 
 section.quotes {
-  min-height: 81.625rem;
+  min-block-size: 81.625rem;
   block-size: 100%;
   padding: 6rem 6vw 0rem 6vw;
   padding-block-end: 5rem;
@@ -310,7 +312,7 @@ section.quotes img.back-up:hover {
   cursor: pointer;
 }
 section.quotes img.quotes__bottom-img {
-  width: 61rem;
+  inline-size: 61rem;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -355,7 +357,7 @@ section.quotes img.quotes__bottom-img {
   }
   body .project .life-and-career__columns p {
     inline-size: 100%;
-    max-width: 100%;
+    max-inline-size: 100%;
   }
   body .project .cthulhu__columns {
     margin: auto;

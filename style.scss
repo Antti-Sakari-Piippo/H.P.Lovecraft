@@ -13,6 +13,7 @@ $quote-color: hsl(180, 100%, 5%);
 $border-color: hsl(180, 10%, 37%);
 $box-shadow: 0px 0px 0.5rem $border-color;
 $Cthulhu-col-inline-size: 44.4rem;
+$max-content-inline-size: 56rem;
 
 // spacings
 $m-100: 0.5rem;
@@ -120,7 +121,7 @@ figcaption {
     font-size: 1.1rem;
     line-block-size: 1.4;
     margin-block-start: $m-100;
-    max-inline-size: $max-content-width;
+    max-inline-size: $max-content-inline-size;
 }
 
 .separator {
@@ -141,7 +142,7 @@ p,
 figure {
     color: $font-color;
     color: rgba($color: $font-color, $alpha: 0.94);
-    max-inline-size: $font-max-width;
+    // max-inline-size: $font-max-width;
     z-index: 999;
 }
 
@@ -165,14 +166,14 @@ p {
     font-size: 1.25rem;
     margin-block-end: $m-400;
     line-block-size: 1.4;
-    max-inline-size: $max-content-width;
+    max-inline-size: $max-content-inline-size;
 }
 
 p.italic-quote {
     font-style: italic;
     font-size: 1.4375rem;
     font-weight: 200;
-    max-inline-size: $max-content-width;
+    max-inline-size: $max-content-inline-size;
 }
 
 p.hp-quote-text {
@@ -215,13 +216,13 @@ p.hp-quote-text {
     .life-and-career__columns {
         margin: $project-spacing;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min($column-width, 100%), 1fr));
-        max-inline-size: calc($column-width * 3 + $m-800 * 2); // max 3 cols + 2 gaps
+        grid-template-columns: repeat(auto-fit, minmax(min($column-inline-size, 100%), 1fr));
+        max-inline-size: calc($column-inline-size * 3 + $m-800 * 2); // max 3 cols + 2 gaps
         flex-wrap: wrap;
         gap: $m-800;
         padding-block-end: 6rem;
         inline-size: 56%;
-        max-inline-size: $max-content-width;
+        max-inline-size: $max-content-inline-size;
         p {
             max-inline-size: 40rem;
         }
@@ -245,7 +246,7 @@ section.works {
 
     .works__columns {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min($column-width, 100%), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min($column-inline-size, 100%), 1fr));
         margin: auto;
         gap: $m-800;
     }
@@ -281,7 +282,7 @@ section.cthulhu {
         justify-content: center;
         .cthulhu__columns_col-1 {
             vertical-align: super;
-            inline-size: $Cthulhu-col-width;
+            inline-size: $Cthulhu-col-inline-size;
             img {
                 margin: auto;
                 object-fit: cover;
@@ -292,7 +293,7 @@ section.cthulhu {
         }
         .cthulhu__columns_col-2 {
             margin-block-end: $m-800;
-            max-inline-size: $Cthulhu-col-width;
+            max-inline-size: $Cthulhu-col-inline-size;
             img {
                 inline-size: 100%;
                 margin: auto;
@@ -301,7 +302,10 @@ section.cthulhu {
             }
             p.italic-quote {
                 $col-inline-size: 36.4rem;
-                inline-size: $col-width;
+                inline-size: $col-inline-size;
+            }
+            figure {
+                inline-size: 75%;
             }
         }
     }
@@ -368,7 +372,7 @@ section.quotes {
 }
 
 // Media queries
-@media only screen and (max-inline-size: $xl) {
+@media only screen and (max-width: $xl) {
     body .project section.cthulhu .cthulhu__columns {
         flex-wrap: wrap;
         p {
@@ -396,7 +400,7 @@ section.quotes {
     }
 }
 
-@media only screen and (max-inline-size: $medium) {
+@media only screen and (max-width: $medium) {
     body .project {
         section.life-and-career::before {
             display: none;
@@ -420,7 +424,7 @@ section.quotes {
             margin-inline: auto;
         }
         col {
-            inline-size: $Cthulhu-col-width;
+            inline-size: $Cthulhu-col-inline-size;
             z-index: 999;
         }
         img.quotes__bottom-img {
@@ -438,13 +442,13 @@ section.quotes {
     }
 }
 
-@media only screen and (min-inline-size: $medium) {
+@media only screen and (min-width: $medium) {
     .project section.life-and-career > img {
         display: none;
     }
 }
 
-@media only screen and (max-inline-size: $xl-small) {
+@media only screen and (max-width: $xl-small) {
     body .project {
         h1 {
             font-size: $h1-responsive;
